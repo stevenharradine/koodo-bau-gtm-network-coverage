@@ -1,0 +1,7 @@
+// common style overrides of production defaults
+.view-phones #db-network-coverage .product-category.device-block {
+	padding: 0;
+	margin: 0 !important;
+		
+	.device-block-content { padding: 0; }
+}

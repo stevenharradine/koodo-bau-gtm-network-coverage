@@ -1,0 +1,50 @@
+//- filepath: /sites/default/files/uploads/db-network-coverage/filename.filetype
+
+doctype html
+html(lang="fr")
+	head
+		title db-network-coverage
+		// START of local webserver CSS resources
+		link(rel="icon", type="image/png", href="http://localhost:4000/public/icons/koodo-blueberry-favicon-196-196.png")
+		link(rel="stylesheet" href="http://localhost:4000/public/font-stag-sans-web/stag-sans-web.css")
+		link(rel="stylesheet" href="http://localhost:4000/public/font-kooding-glyphs/kooding-glyphs.css")
+		link(rel="stylesheet" href="http://localhost:4000/public/styles/page-title-helper.css")
+		link(rel="stylesheet" href="http://localhost:4000/public/styles/window-dimensions-helper.css")
+		// END of local webserver CSS resources
+		link(rel="stylesheet" href="styles/main.css")
+		meta(charset="utf-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		style.
+			/* project-specific local-only styles go here */
+			body { margin: 0; }
+
+			.db-network-coverage { margin: 20px auto; }
+	body
+		div#site-wrapper.page-content <!-- markup to mirror production page structure -->
+			div#ptHelper <!-- markup to mirror production page structure -->
+				h2 Device Block: Network Coverage [FR]
+			div.content <!-- markup to mirror production page structure -->
+				div#db-network-coverage.device-list-block <!-- markup to mirror production page structure -->
+					div.db-network-coverage.lang-fr
+						div.title-container
+							h2.lang-fr Même couverture réseau #[span que les autres]
+						div.map-container.inner-container.lang-fr
+							img.map-base(src="/sites/default/files/uploads/db-network-coverage/map-base-and-koodo.png")
+							img.map-layer.bell-layer.inner-container(src="/sites/default/files/uploads/db-network-coverage/map-layer-bell.png")
+							img.map-layer.rogers-layer.inner-container(src="/sites/default/files/uploads/db-network-coverage/map-layer-rogers.png")
+						div.map-legend-container.lang-fr
+							a(href="http://passezalajoie.koodomobile.com/reseau" target="_blank") Comparez notre couverture &nbsp; #[span.kooding-glyph.thin-chevron-right]
+							div.map-legend
+								button#toggle-koodo.toggle-active #[span La couverture #[span Koodo]]
+								button#toggle-bell #[span Les #[span autres]]
+								button#toggle-rogers #[span Les autres #[span autres]]
+					<!-- /.db-network-coverage.lang-fr -->
+				<!-- /#db-network-coverage -->
+			<!-- /.content -->
+		<!-- /#site-wrapper.page-content -->
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+		// START of local webserver JS resources
+		script(src="http://localhost:4000/public/scripts/page-title-helper.js")
+		script(src="http://localhost:4000/public/scripts/window-dimensions-helper.js")
+		// END of local webserver JS resources
+		script(src="scripts/main.js")

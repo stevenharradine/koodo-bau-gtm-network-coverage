@@ -1,0 +1,140 @@
+@import "colors";
+@import "fonts";
+@import "standardize";
+@import "override";
+
+.db-network-coverage {
+	padding-top: 75px;
+	background-color: $kCustomLightBlue;
+	text-align: center;
+	position: relative;
+}
+
+.title-container {
+	padding: 30px 15px 0 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 1000;
+
+	h2 {
+		max-width: 500px;
+		padding: 10px 0;
+		border-bottom: 8px solid $kRaspberryAlpha;
+		margin: 0 auto;
+		background-clip: padding-box;
+		background-color: $kRaspberry;
+		color: white;
+		font-size: 18px;
+		letter-spacing: 1px;
+		line-height: 1.2;
+		text-transform: uppercase;
+		position: relative;
+
+		// small triangle pseudo elements to create trapezoid-shaped shadow effect
+		&:before,
+		&:after {
+			content: "";
+			height: 0;
+			width: 0;
+			border-bottom: 8px solid $kCustomLightBlue;
+			position: absolute;
+			bottom: -8px;
+		}
+
+		&:before { // left corner of shadow
+			border-right: 8px solid transparent;
+			left: 0;
+		}
+
+		&:after { // right corner of shadow
+			border-left: 8px solid transparent;
+			right: 0;
+		}
+
+		span { display: block; }
+	}
+}
+
+.map-container {
+	max-width: 500px;
+	margin: 10px auto;
+	position: relative;
+
+	.map-layer {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 10;
+		opacity: 0;
+		transition: opacity 0.25s ease-in;
+
+		&.layer-active { opacity: 1; }
+	}
+}
+
+.map-legend-container {
+	a { // "Compare our coverage" link
+		padding: 10px 0;
+		background-color: $kRaspberry;
+		color: $kLime;
+		display: block;
+		letter-spacing: 0.5px;
+		text-decoration: none;
+
+		&:focus, &:hover {
+			color: $kDarkBlueHover;
+			text-decoration: underline;
+		}
+	}
+
+	.map-legend {
+		background-color: white;
+		display: flex;
+		justify-content: center;
+	}
+
+		button {
+			width: 33.3%;
+			padding: 10px;
+			border: none;
+			background-color: white;
+			color: $kDarkBlue;
+
+			&:focus, &:hover { color: $kDarkBlueHover; }
+
+			> span { // first line of text
+				> span { display: block; } // second line of text
+
+				&:before { // circular pseudo-elements
+					content: "";
+					height: 20px;
+					width: 20px;
+					border: 2px solid transparent;
+					border-radius: 50%;
+					margin: 0 auto 5px auto;
+					display: block;
+				}
+			}
+		}
+
+		.toggle-active {
+			background-color: $kCustomDarkBlue;
+			color: white;
+
+			&:focus, &:hover { color: white; }
+
+			span:before { border: 2px solid white; }
+		}
+
+		#toggle-koodo span:before { background-color: $kRaspberry; }
+
+		#toggle-bell span:before { background-color: $kBellBlue; }
+
+		#toggle-rogers span:before { background-color: $kRogersRed; }
+}
+
+@import "media-query";

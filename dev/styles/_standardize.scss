@@ -1,0 +1,26 @@
+// standard styling for main parent element and its child elements
+.db-network-coverage {
+	display: block; // required for IE 11 to properly use padding-bottom
+	@extend .stag-sans-bold-web;
+	font-size: 16px; // minimum font-size
+	line-height: 1;
+
+	* { box-sizing: border-box; }
+
+	button {
+		cursor: pointer;
+		@extend .stag-sans-bold-web;
+		font-size: 16px;
+	}
+
+	&.lang-fr button { font-size: 11.9px; }
+
+	img {
+		max-width: 100%;
+		display: block;
+	}
+
+	h2, p { margin: 0; }
+
+	.inner-container { padding: 0 20px; }
+}
